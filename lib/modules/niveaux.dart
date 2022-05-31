@@ -143,3 +143,11 @@ class Niveaux {
         [1, 2, 3, 4, 5]));
   }
 }
+
+bool dansLeMur(int position) {
+  if (position % 40 == 0) return true;
+  if (position < 40) return true;
+  if (position % 40 == 39) return true;
+  if (position > 1160) return true;
+  return false;
+}
