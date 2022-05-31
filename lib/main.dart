@@ -154,14 +154,6 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  bool dansLeMur(int position) {
-    if (position % 40 == 0) return true;
-    if (position < 40) return true;
-    if (position % 40 == 39) return true;
-    if (position > 1160) return true;
-    return false;
-  }
-
   bool gameOver() {
     final copyList = List.from(snakePosition);
     if (snakePosition.length > copyList.toSet().length) {
