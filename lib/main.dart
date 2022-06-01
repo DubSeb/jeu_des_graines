@@ -12,7 +12,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Must add this line.
   await windowManager.ensureInitialized();
-  windowManager.setTitle("Jeu du serpent!");
+  windowManager.setTitle("Le jeu du serpent");
   runApp(const MyApp());
 }
 
