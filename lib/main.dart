@@ -4,10 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'modules/niveaux.dart';
+import 'package:window_manager/window_manager.dart';
 
 enum Direction { up, down, left, right, stop }
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Must add this line.
+  await windowManager.ensureInitialized();
+  windowManager.setTitle("Jeu du serpent!");
   runApp(const MyApp());
 }
 
