@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 import 'modules/niveaux.dart';
 import 'package:window_manager/window_manager.dart';
+import 'package:menubar/menubar.dart';
 
 enum Direction { up, down, left, right, stop }
 
