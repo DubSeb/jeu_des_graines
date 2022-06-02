@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 
 import 'modules/niveaux.dart';
 import 'package:window_manager/window_manager.dart';
-import 'package:menubar/menubar.dart';
 
 enum Direction { up, down, left, right, stop }
 
@@ -276,10 +275,11 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index) {
                   if (foodPosition.contains(index)) {
                     return Container(
-                        color: Colors.greenAccent,
+                        color: Colors.yellowAccent,
                         child: Text(
                           "${foodValues[foodPosition.indexWhere((element) => element == index)]}",
                           textAlign: TextAlign.center,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
                         ));
                   }
                   if ((index % 40 == 0) ||
@@ -288,35 +288,55 @@ class _HomePageState extends State<HomePage> {
                       (1160 < index)) {
                     return Container(
                       decoration: BoxDecoration(
-                        color: Colors.grey,
+                        color: Colors.white38,
                         border: Border.all(
-                          color: Colors.black,
-                          width: 1.0,
+                          color: Colors.grey,
+                          width: 0.5,
                           style: BorderStyle.solid,
                         ),
                         shape: BoxShape.rectangle,
                       ),
                     );
+                    ;
                   }
                   if (snakePosition.contains(index)) {
                     if (compteurFood % 2 == 1) {
                       return Container(
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.greenAccent,
+                        decoration: BoxDecoration(
+                          color: Colors.yellowAccent,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5,
+                            style: BorderStyle.solid,
+                          ),
+                          shape: BoxShape.rectangle,
                         ),
                       );
+                      ;
                     } else {
                       return Container(
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
+                        decoration: BoxDecoration(
                           color: Colors.red,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5,
+                            style: BorderStyle.solid,
+                          ),
+                          shape: BoxShape.rectangle,
                         ),
                       );
                     }
                   }
                   return Container(
-                    color: Colors.black,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 0.5,
+                        style: BorderStyle.solid,
+                      ),
+                      shape: BoxShape.rectangle,
+                    ),
                   );
                 },
               ),
